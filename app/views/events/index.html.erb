@@ -1,1 +1,11 @@
 <%= link_to "Create Event", :new_event %>
+
+<hr>
+<% @events.each do |event| %>
+  <% @instances.each do |instance| %>
+    <% if instance.event_id == event.id %>
+      <%= instance.start.strftime("%b. %d, %Y") %> <br>
+      <%= event.name %><br><br>
+    <% end %>
+  <% end %>
+<% end %>

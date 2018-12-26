@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.order('start')
+    @instances = EventInstance.order('start')
   end
 
   def show
@@ -11,8 +12,10 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      EventInstance.create(event_id: @event.id, start: @event.start, end: @event.end)
+      recurring_method(@event)
       redirect_to events_path
+    else
+      redirect_to new_event_path
     end
   end
 
@@ -29,7 +32,9 @@ class EventsController < ApplicationController
   end
 
   def destroy
-
+      @event = Event.find_by(id: params[:id])
+      @event.destroy
+      redirect_to '/events'
   end
 
 private

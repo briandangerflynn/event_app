@@ -16,6 +16,8 @@ class EventInstancesController < ApplicationController
   def show
     @instance = EventInstance.find(params[:id])
     @event = Event.find(params[:event_id])
+    @attendees = Attendee.where(event_id: @event.id)
+    @attendee = Attendee.new
   end
 
   def create

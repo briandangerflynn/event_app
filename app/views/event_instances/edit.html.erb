@@ -1,0 +1,10 @@
+<hr>
+<%= form_for @instance, url: {action: "update"} do |f| %>
+  <%= f.label "Start Time", :start %>
+  <%= f.datetime_field :start %>
+  <br><br>
+  <%= f.label "End Time", :end %>
+  <%= f.datetime_field :end %>
+  <br><br>
+  <%= f.submit "Edit Instance" %>
+<% end %>

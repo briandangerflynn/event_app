@@ -1,10 +1,10 @@
+
 <%= link_to "Create Event", :new_event %>
 <%= form_tag(event_event_instances_path(@events), method: :get) do %>
   <%= date_field_tag :start, params[:start] %>
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 <hr>
-
 
 <% @instances.each do |instance| %>
   <% @events.each do |event| %>

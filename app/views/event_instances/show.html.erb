@@ -1,0 +1,21 @@
+
+<hr>
+<h3><%= @event.name %></h3>
+<%= @event.description %><br><br>
+<b>Starts: </b><%= @instance.start.strftime("%b. %d, %Y") %><br><br>
+<b>Ends: </b><%= @instance.end.strftime("%b. %d, %Y") %><br><br>
+
+<%= link_to "Edit Instance", edit_event_event_instance_path(@event) %>
+
+<br><br>
+
+<%= link_to "Edit ALL Instances", edit_event_path(@event) %>
+
+<br><br>
+
+<%= link_to "Delete Instance", event_event_instance_path(@event), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<br><br>
+
+<%= link_to "Delete ALL Instances", @event, method: :delete, data: { confirm: "Are you sure?" } %>
+

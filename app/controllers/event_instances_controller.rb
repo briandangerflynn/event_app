@@ -30,8 +30,8 @@ class EventInstancesController < ApplicationController
 
 private
 
-  def event_instances_params
-    params.require(:event_instances).permit(:start, :end, :event_id)
+  def event_instance_params
+    params.require(:event_instance).permit(:start, :end, :event_id)
   end
 
 

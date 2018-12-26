@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_26_051907) do
+ActiveRecord::Schema.define(version: 2018_12_26_055226) do
 
   create_table "attendees", force: :cascade do |t|
     t.string "first_name"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2018_12_26_051907) do
     t.boolean "reminder"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start"
+    t.datetime "end"
   end
 
 end

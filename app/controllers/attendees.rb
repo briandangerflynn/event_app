@@ -30,8 +30,8 @@ class AttendeesController < ApplicationController
 
 private
 
-  def attendees_params
-    params.require(:attendees).permit(:first_name, :last_name, :email)
+  def attendee_params
+    params.require(:attendee).permit(:first_name, :last_name, :email)
   end
 
 
